@@ -19,4 +19,5 @@ public class Control {
     private String sleepTime;
     private String calories;
     private String steps;
+    private String ritmoCardiaco;
 }

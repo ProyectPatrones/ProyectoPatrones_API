@@ -2,7 +2,6 @@ package com.ehealt.ts.models;
 
 import lombok.*;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,18 +11,15 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class User implements Serializable {
+public class News implements Serializable {
     @Id
-    private Integer id;
+    private int id;
 
-    private String username;
+    private String topic;
 
-    @Column(name = "name", length = 50)
-    private String name;
+    private String filter;
 
-    private String lastName;
 
-    private String diagnostico;
 
     @Getter(AccessLevel.PRIVATE)
     @Setter(AccessLevel.PRIVATE)

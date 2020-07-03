@@ -1,0 +1,9 @@
+package com.ehealt.ts.repositories;
+
+import com.ehealt.ts.models.Reminder;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IReminderRepository  extends JpaRepository<Reminder, Integer> {
+}
