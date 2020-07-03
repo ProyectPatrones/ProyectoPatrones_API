@@ -8,11 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
-public class User implements Serializable {
+public class User {
     @Id
     private Integer id;
 
@@ -25,8 +23,20 @@ public class User implements Serializable {
 
     private String diagnostico;
 
-    @Getter(AccessLevel.PRIVATE)
-    @Setter(AccessLevel.PRIVATE)
-    private static final long serialVersionUID = 1L;
+
+
+
+    public static int contador=0;
+    public static User instance;
+    private User(){
+        contador++;
+    }
+
+  public static synchronized User getInstance(){
+        if(instance==null){
+            instance= new User();
+        }
+        return instance;
+  }
 
 }
