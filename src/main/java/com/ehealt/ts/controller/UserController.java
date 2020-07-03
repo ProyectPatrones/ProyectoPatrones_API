@@ -52,7 +52,7 @@ public class UserController {
    @GetMapping("/add")
     public void adduser(Model model){
 
-        model.addAttribute("user", User.getInstance() );
+        model.addAttribute("user", new User() );
 
    }
 
