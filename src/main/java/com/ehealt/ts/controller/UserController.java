@@ -3,8 +3,10 @@ package com.ehealt.ts.controller;
 import com.ehealt.ts.models.Doctor;
 import com.ehealt.ts.models.User;
 import com.ehealt.ts.repositories.IUsersRepository;
+import com.ehealt.ts.response.UserControlResponse;
 import com.ehealt.ts.service.IUserService;
 import jakarta.validation.Valid;
+import jakarta.ws.rs.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -52,7 +54,7 @@ public class    UserController {
    @GetMapping("/add")
     public void adduser(Model model){
 
-        model.addAttribute("user", User.getInstance() );
+        model.addAttribute("user", new User() );
 
    }
 
@@ -65,6 +67,11 @@ public class    UserController {
        }
        return "redirect:/listar";
 
+   }
+
+   @PostMapping("/{userId}/setUserControl/{userControl}")
+    public UserControlResponse setUserControl(@PathVariable (value = "userId") int userId, @PathVariable (value = "controlId") int controlId){
+        return service.setUserControl(userId,controlId);
    }
 
 
