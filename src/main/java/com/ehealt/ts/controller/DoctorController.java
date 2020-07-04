@@ -41,7 +41,7 @@ public class DoctorController {
 
 
     @PostMapping("/save")
-    public void save(@Valid Doctor d, Model model){
+    public void save(@RequestBody Doctor d){
         try {
             service.save(d);
         } catch (Exception e) {

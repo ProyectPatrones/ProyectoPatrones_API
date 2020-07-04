@@ -57,7 +57,7 @@ public class    UserController {
    }
 
    @PostMapping("/save")
-    public String save (@Valid User u , Model model){
+    public String save (@RequestBody User u ){
        try {
            service.save(u);
        } catch (Exception e) {

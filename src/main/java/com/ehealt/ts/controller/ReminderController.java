@@ -26,8 +26,8 @@ public class ReminderController {
         reminderService.deleteById(id);
     }
 
-    @PostMapping("/save/{id}")
-    public void save(@Valid Reminder r, Model model) throws Exception {
+    @PostMapping("/save")
+    public void save(@RequestBody Reminder r) throws Exception {
         reminderService.save(r);
     }
     @GetMapping ("/edit/{id}")

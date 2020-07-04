@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 
 @Entity
-public class User {
+public class User  {
     @Id
     private Integer id;
 
@@ -38,5 +38,7 @@ public class User {
         }
         return instance;
   }
+
+
 
 }

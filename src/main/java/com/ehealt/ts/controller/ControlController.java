@@ -22,7 +22,7 @@ public class ControlController {
     }
 
     @PostMapping("/save")
-    public void save (@Valid Control control, Model model) throws Exception {
+    public void save (@RequestBody Control control) throws Exception {
         service.save(control);
     }
 
@@ -31,4 +31,6 @@ public class ControlController {
         Optional<Control>control = service.findById(id);
         model.addAttribute("control", control);
     }
+
+
 }
