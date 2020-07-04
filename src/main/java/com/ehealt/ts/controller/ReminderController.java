@@ -4,11 +4,8 @@ import com.ehealt.ts.models.Reminder;
 import com.ehealt.ts.service.IReminderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
@@ -29,9 +26,14 @@ public class ReminderController {
         reminderService.deleteById(id);
     }
 
-    @GetMapping("/save/{id}")
+    @PostMapping("/save/{id}")
     public void save(@Valid Reminder r, Model model) throws Exception {
         reminderService.save(r);
+    }
+    @GetMapping ("/edit/{id}")
+    public void edit(@PathVariable int id, Model model) throws Exception {
+        Optional<Reminder>reminder = reminderService.findById(id);
+        model.addAttribute("reminder", reminder);
     }
 
 }
