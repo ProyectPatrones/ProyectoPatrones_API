@@ -16,6 +16,7 @@ import javax.persistence.Id;
 public class Control {
     @Id
     private Integer id;
+
     private String sleepTime;
     private String calories;
     private String steps;

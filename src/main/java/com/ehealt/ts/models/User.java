@@ -10,6 +10,8 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.List;
 
+@Getter
+@Setter
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -33,9 +35,6 @@ public class User {
         this.password = password;
     }
 
-
-    public String getPassword(){return password;}
-    public String getName(){return name;}
 
  //   public static int contador=0;
   //  public static User instance;
