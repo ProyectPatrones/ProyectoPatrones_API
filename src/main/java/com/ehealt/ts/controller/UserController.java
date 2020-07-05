@@ -54,7 +54,7 @@ public class    UserController {
    @GetMapping("/add")
     public void adduser(Model model){
 
-        model.addAttribute("user", new User() );
+        model.addAttribute("user", User.getInstance() );
 
    }
 

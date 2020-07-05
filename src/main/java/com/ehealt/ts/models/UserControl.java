@@ -2,14 +2,14 @@ package com.ehealt.ts.models;
 
 
 import lombok.AccessLevel;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Getter
-@Setter
+@Data
 @Entity
 public class UserControl implements Serializable {
 

@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class News implements Serializable {
+public class News  {
     @Id
     private int id;
 
@@ -21,8 +21,5 @@ public class News implements Serializable {
 
 
 
-    @Getter(AccessLevel.PRIVATE)
-    @Setter(AccessLevel.PRIVATE)
-    private static final long serialVersionUID = 1L;
 
 }
